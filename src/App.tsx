@@ -1,7 +1,7 @@
 import "./App.css";
 
-const customYellow = "bg-yellow-300";
-const customRed = "bg-red-600";
+const customYellow = "bg-[#ffff00]";
+const customRed = "bg-[#ff0000]";
 
 type TProps = {
   children: React.ReactNode;
@@ -28,13 +28,13 @@ const ray = (
   ></div>
 );
 
-const rayHatPercentage = 0.15;
+const rayHatPercentage = 0;
 const rayWidth = 16;
-const rayHeight = 40;
+const rayHeight = 38;
 
 const rayCurvy = (
   <div
-    className={`${customYellow} absolute transform translate-y-full -translate-x-1/2 bottom-0 left-1/2 w-[16px] h-[42px]`}
+    className={`${customYellow} absolute transform translate-y-full -translate-x-1/2 bottom-[1px] left-1/2 w-[16px] h-[42px]`}
     style={{
       clipPath: `path('M 0 0 Q 0 12, ${
         rayWidth * ((0.5 - rayHatPercentage / 2) / 2)
@@ -44,7 +44,7 @@ const rayCurvy = (
         rayWidth * 0.5
       } ${rayHeight} T ${rayWidth * (0.5 + rayHatPercentage / 2)} ${
         rayHeight * (1 - rayHatPercentage)
-      } q 4 -10, ${rayWidth * ((0.5 - rayHatPercentage / 2) / 2)} -${
+      } q 5 -10, ${rayWidth * ((0.5 - rayHatPercentage / 2) / 2)} -${
         rayHeight * ((1 - rayHatPercentage) / 2)
       } T ${rayWidth} 0 Z')`,
     }}
@@ -53,7 +53,7 @@ const rayCurvy = (
 
 const Spear = () => (
   <div className={`flex flex-col absolute items-center`}>
-    <div className={`h-[99px] w-0 bg-green-500 relative`}>{rayCurvy}</div>
+    <div className={`h-[104px] w-0 bg-green-500 relative`}>{rayCurvy}</div>
   </div>
 );
 
@@ -74,7 +74,7 @@ function App() {
         ))}
       </div>
       <div
-        className={`${customYellow} rounded-full h-[200px] aspect-square flex justify-center items-center`}
+        className={`${customYellow} rounded-full h-[208px] aspect-square flex justify-center items-center`}
       >
         <div
           className={`${customRed} rounded-full h-44 aspect-square flex justify-center items-center`}
